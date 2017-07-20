@@ -1,0 +1,4 @@
+gwconfig:
+  build: .
+  volumes:
+    - ./:/go/src/github.com/brocaar/lora-gateway-config

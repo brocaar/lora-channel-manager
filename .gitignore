@@ -1,0 +1,7 @@
+# hidden files
+.*
+
+# binaries
+dist/
+build/
+docs/public/
