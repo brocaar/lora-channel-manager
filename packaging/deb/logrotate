@@ -1,0 +1,8 @@
+/var/log/lora-gateway-config/lora-gateway-config.log {
+    daily
+    rotate 7
+    missingok
+    dateext
+    copytruncate
+    compress
+}

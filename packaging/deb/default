@@ -1,0 +1,29 @@
+# mac address of the gateway
+GW_MAC=
+
+# hostname:ip of the gateway api server
+GW_SERVER=127.0.0.1:8002
+
+# ca certificate used by the gateway-server client (optional)
+GW_CLIENT_CA_CERT=
+
+# tls certificate used by the gateway-server client (optional)
+GW_CLIENT_TLS_CERT=
+
+# tls key used by the gateway-server client (optional)
+GW_CLIENT_TLS_KEY=
+
+# jwt token used by the gateway-server client for authentication (issued by LoRa Server)
+GW_CLIENT_JWT_TOKEN=
+
+# path to the base configuration file
+BASE_CONFIG_FILE=
+
+# path to the output configuration file
+OUTPUT_CONFIG_FILE=
+
+# command which must be executed on configuration changes to restart the packet-forwarder
+# PF_RESTART_COMMAND=systemctl restart packet-forwarder
+
+# interval between polling new configuration (default: 5m0s)
+CONFIG_POLL_INTERVAL=5m0s

@@ -1,0 +1,15 @@
+[Unit]
+Description=LoRa Gateway Config
+Documentation=https://docs.loraserver.io
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+Group=root
+EnvironmentFile=/etc/default/lora-gateway-config
+ExecStart=/usr/bin/lora-gateway-config
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
