@@ -1,0 +1,72 @@
+language: go
+sudo: required
+dist: trusty
+
+go:
+  - 1.8.x
+
+before_install:
+  - go get github.com/golang/lint/golint
+  - go get github.com/kisielk/errcheck
+
+script:
+  - make test
+
+before_deploy:
+  - |
+    if ! [ "$BEFORE_DEPLOY_RUN" ]; then
+      export BEFORE_DEPLOY_RUN=1;
+
+      rvm --default use system;
+      wget https://github.com/spf13/hugo/releases/download/v0.25.1/hugo_0.25.1_Linux-64bit.deb;
+      sudo dpkg -i hugo_0.25.1_Linux-64bit.deb;
+      rm *.deb;
+      sudo apt-get install -y ruby ruby-dev;
+      sudo gem install --no-ri --no-rdoc fpm;
+      make documentation;
+
+      GOOS=linux GOARCH=amd64 make package package-deb;
+      GOOS=linux GOARCH=386 make package package-deb;
+      GOOS=linux GOARCH=arm make package package-deb;
+      GOOS=darwin GOARCH=amd64 make package;
+      GOOS=windows BINEXT=.exe GOARCH=386 make package;
+      GOOS=windows BINEXT=.exe GOARCH=amd64 make package;
+    fi
+
+deploy:
+  - provider: releases
+    skip_cleanup: true
+    api_key:
+      secure: iKjEKuSnXlgO+ShX9cQ/5QFphN793mLvDAHuXnrKiKUDWoR5jnOMRRt0Ox6E8D2eiyI7dB7zY5jBFrntE5tqIe2SzWgqvDeiDogkKXFQoIZC89O6jwVD8RRBM6klQsBL/HXXCkdO0Sp9iFEDpaHpGDrZYNNpf9Pi6BhaNcO1WKRI+Cccw9MBXK77EFEjFvPmUeLdmKI2ticFApYB/l3Wu3eQfIEA0vXodYUtqXDNSQPQmJ4SEtgCki+v9QCzyIAIPKhhHBtHAsRJ6h/Mt4gmDSRUozoFgB+RgHZ3PDI/OHLxSJUPPvuNkTeZxBVmENNCPauPAL7pbDeBxetwja24KaE41RWlWiQmXXrxdAh1UW3ophyY6Pnzn0NDAU6kNzFYDN08WaXGds3/kfXVBR+Sn2CANdsTGNjyw9z5UUeu8pMcifMLvvgsEUUopUTYX6rKVV2O97ceSiF1nWR2/V5Q2vaD/olOlrXzKjf6busslQslDn05HCujuN+PGxb3qjh+419TvzFeqYydOeEFMI0pl+RGarU/hEFUe5/j0DliqSxQcgZTN9X5NQ8Tb4mqv3+pfJRRfRXCxGwT/85bTG28LWujmqfwkcIomudwKEC2caZA6pqndbaXGwyl9Syzr2I3Jhz6Yr+4X8zdf6dt/tMZMol1ehabuxlk4hfgyYwpYE0=
+    file_glob: true
+    file: "dist/tar/*.tar.gz"
+    on:
+      tags: true
+      repo: brocaar/lora-gateway-config
+
+  - provider: s3
+    skip_cleanup: true
+    access_key_id: AKIAJRLX7TQLGT6NN7WQ
+    secret_access_key:
+      secure: tbbGdK/QIcX7BCCMJeQ1CO4nSnpOgeUA6zaT5gCI3YDg34GsY/vIUXSc4BCAOrBx1cMAfbaDHU4nxGI8udyHOjfNkLBsL9pDOvIuwc5FwzbQoRYTpVxduxl1VJbYeTrkqhdRi2QG5pgECKrl2R5/F0G2yy4kPDu5HapHt24Z8E3ZQSH1b9mNCJOeLDlifRoTIw2GqY5GZVjOr1ep5x3QFpCBDjo3UmjDqd0pmqD+7VyfnqF/U26REufk0YIHUWP5NJqCslr+gEhimuR+c0dc3hXvbPBAofkKnAo+2NVl/cl0Ma9aLDvVK3ThxzK4LWFlZ0IefkqtWT+yasM09+xPpLagHxTVZfA8KBaiZtz6sINRuPuVnl2l0j4eoICcNMHP7YATTaHR9SyjTPILq6GvWzrYBJbbi5eep8JJHfTlyRvjrrarviQZPEhaRF71QK8dZgET7c2TZaxptfrZppWfcQpvh/SNDja/WcIK7Cnq3WpdUrhJBEse3xp9s/rvvR34tX8XuoFyyeleHvo+DmWFsLoutg8VxU7JpKIxLhxbwPdROvVmpAJpllJA5WMIchSAOwSyFEFwgQtWcAOiDLwdIPSQAhU7WtrZKXack6nd2ryvhsh8sfP5T06rSvXGhiy/Iuu4BX51hl1noH2vEbPpdU2akmvxolE/OnMyN/dpS3k=
+    bucket: builds.loraserver.io
+    local-dir: dist
+    acl: private
+    region: eu-west-1
+    on:
+      tags: true
+      repo: brocaar/lora-gateway-config
+
+  - provider: s3
+    skip_cleanup: true
+    access_key_id: AKIAJRLX7TQLGT6NN7WQ
+    secret_access_key:
+      secure: tbbGdK/QIcX7BCCMJeQ1CO4nSnpOgeUA6zaT5gCI3YDg34GsY/vIUXSc4BCAOrBx1cMAfbaDHU4nxGI8udyHOjfNkLBsL9pDOvIuwc5FwzbQoRYTpVxduxl1VJbYeTrkqhdRi2QG5pgECKrl2R5/F0G2yy4kPDu5HapHt24Z8E3ZQSH1b9mNCJOeLDlifRoTIw2GqY5GZVjOr1ep5x3QFpCBDjo3UmjDqd0pmqD+7VyfnqF/U26REufk0YIHUWP5NJqCslr+gEhimuR+c0dc3hXvbPBAofkKnAo+2NVl/cl0Ma9aLDvVK3ThxzK4LWFlZ0IefkqtWT+yasM09+xPpLagHxTVZfA8KBaiZtz6sINRuPuVnl2l0j4eoICcNMHP7YATTaHR9SyjTPILq6GvWzrYBJbbi5eep8JJHfTlyRvjrrarviQZPEhaRF71QK8dZgET7c2TZaxptfrZppWfcQpvh/SNDja/WcIK7Cnq3WpdUrhJBEse3xp9s/rvvR34tX8XuoFyyeleHvo+DmWFsLoutg8VxU7JpKIxLhxbwPdROvVmpAJpllJA5WMIchSAOwSyFEFwgQtWcAOiDLwdIPSQAhU7WtrZKXack6nd2ryvhsh8sfP5T06rSvXGhiy/Iuu4BX51hl1noH2vEbPpdU2akmvxolE/OnMyN/dpS3k=
+    bucket: builds.loraserver.io
+    local-dir: dist/docs
+    upload-dir: docs
+    acl: private
+    region: eu-west-1
+    on:
+      branch: master
+      repo: brocaar/lora-gateway-config
