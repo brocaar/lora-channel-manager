@@ -23,7 +23,7 @@ BASE_CONFIG_FILE=
 OUTPUT_CONFIG_FILE=
 
 # command which must be executed on configuration changes to restart the packet-forwarder
-# PF_RESTART_COMMAND=systemctl restart packet-forwarder
+# PF_RESTART_COMMAND="systemctl restart packet-forwarder"
 
 # interval between polling new configuration (default: 5m0s)
 CONFIG_POLL_INTERVAL=5m0s

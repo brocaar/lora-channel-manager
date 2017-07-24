@@ -1,4 +1,4 @@
-.PHONY: build clean test package package-deb
+.PHONY: build clean test package package-deb documentation
 PKGS := $(shell go list ./... | grep -v /vendor/ | grep -v loraserver/api | grep -v /migrations | grep -v /static)
 VERSION := $(shell git describe --always)
 GOOS ?= linux
@@ -21,6 +21,12 @@ test:
 	done
 	@go vet $(PKGS)
 	@go test -p 1 -v $(PKGS)
+
+documentation:
+	@echo "Building documentation"
+	@mkdir -p dist/docs
+	@cd docs && hugo
+	@cd docs/public/ && tar -pczf ../../dist/docs/lora-gateway-config.tar.gz .
 
 package: clean build
 	@echo "Creating package for $(GOOS) $(GOARCH)"

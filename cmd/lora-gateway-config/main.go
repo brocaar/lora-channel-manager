@@ -44,6 +44,13 @@ func run(c *cli.Context) error {
 	config.PFRestartCommand = c.String("pf-restart-command")
 	config.ConfigPollInterval = c.Duration("config-poll-interval")
 
+	log.WithFields(log.Fields{
+		"version":            version,
+		"docs":               "https://docs.loraserver.io/",
+		"base_config_file":   config.BaseConfigFile,
+		"output_config_file": config.OutputConfigFile,
+	}).Info("starting LoRa Gateway Config")
+
 	// connect to gateway api server
 	log.WithFields(log.Fields{
 		"server":   c.String("gw-server"),

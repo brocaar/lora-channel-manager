@@ -1,0 +1,21 @@
+---
+title: Contribute
+menu:
+  main:
+    parent: community
+    weight: 2
+---
+
+## Contribute
+
+There are a couple of ways to get involved:
+
+* Join the discussions:
+	* LoRa Server project forum [https://forum.loraserver.io/](https://forum.loraserver.io/)
+	* LoRa Gateway Config Gitter chat [https://gitter.im/loraserver/lora-gateway-config](https://gitter.im/loraserver/lora-gateway-config)
+* Report bugs or make feature-requests by opening an issue at [https://github.com/brocaar/lora-gateway-config/issues](https://github.com/brocaar/lora-gateway-config/issues)
+* Fix issues or improve documentation by creating pull-requests
+
+When you would like to add new features, please discuss the feature first
+by creating an issue describing your feature, how you're planning to implement
+it, what the usecase is etc...
