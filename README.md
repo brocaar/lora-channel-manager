@@ -3,9 +3,10 @@
 [![Build Status](https://travis-ci.org/brocaar/lora-gateway-config.svg?branch=master)](https://travis-ci.org/brocaar/lora-gateway-config)
 [![Gitter chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/loraserver/lora-gateway-config)
 
-LoRa Gateway Config periodically reads channel-configuration from [LoRa Server](https://github.com/brocaar/loraserver/)
-and updates the [packet-forwarder](https://github.com/lora-net/packet_forwarder)
-configuration in case of updates, and restarts the packet-forwarder process.
+LoRa Gateway Config periodically reads channel-configuration from [LoRa Server](https://github.com/brocaar/loraserver/),
+updates the [packet-forwarder](https://github.com/lora-net/packet_forwarder)
+configuration in case of updates, and restarts the packet-forwarder process
+in case of any changes.
 
 ## Documentation
 

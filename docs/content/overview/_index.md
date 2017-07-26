@@ -8,9 +8,10 @@ menu:
 
 ## LoRa Gateway Config
 
-LoRa Gateway Config periodically reads channel-configuration from [LoRa Server](/loraserver/)
-adn updates the [packet-forwarder](https://github.com/lora-net/packet_forwarder)
-configuration in case of updates, and restarts the packet-forwarder process.
+LoRa Gateway Config periodically reads channel-configuration from [LoRa Server](/loraserver/),
+updates the [packet-forwarder](https://github.com/lora-net/packet_forwarder)
+configuration in case of updates, and restarts the packet-forwarder process
+in case of any changes.
 
 ### How it works
 
