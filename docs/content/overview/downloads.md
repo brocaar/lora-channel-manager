@@ -23,9 +23,9 @@ menu:
 
 | File name                                                                                                                   | OS      | Arch  |
 | ----------------------------------------------------------------------------------------------------------------------------| ------- | ----- |
-| [lora-gateway-config_{{< version >}}_amd64.deb](https://dl.loraserver.io/deb/lora-gateway-config_{{< version >}}_amd64.deb) | Linux   | 386   |
-| [lora-gateway-config_{{< version >}}_armhf.deb](https://dl.loraserver.io/deb/lora-gateway-config_{{< version >}}_armhf.deb) | Linux   | amd64 |
-| [lora-gateway-config_{{< version >}}_i386.deb](https://dl.loraserver.io/deb/lora-gateway-config_{{< version >}}_i386.deb)   | Linux   | arm   |
+| [lora-gateway-config_{{< version >}}_i386.deb](https://dl.loraserver.io/deb/lora-gateway-config_{{< version >}}_i386.deb)   | Linux   | 386   |
+| [lora-gateway-config_{{< version >}}_amd64.deb](https://dl.loraserver.io/deb/lora-gateway-config_{{< version >}}_amd64.deb) | Linux   | amd64 |
+| [lora-gateway-config_{{< version >}}_armhf.deb](https://dl.loraserver.io/deb/lora-gateway-config_{{< version >}}_armhf.deb) | Linux   | arm   |
 
 ### Debian Ubuntu repository
 
