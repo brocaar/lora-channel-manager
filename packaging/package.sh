@@ -24,7 +24,7 @@ case $TARGET in
 		;;
 esac
 
-NAME=lora-gateway-config
+NAME=lora-channel-manager
 BIN_DIR=/usr/bin
 SCRIPT_DIR=/usr/lib/$NAME/scripts
 TMP_WORK_DIR=`mktemp -d`
@@ -39,7 +39,7 @@ VERSION=`git describe --always`
 URL=https://docs.loraserver.io/$NAME/
 MAINTAINER=info@brocaar.com
 VENDOR="LoRa Server project"
-DESCRIPTION="LoRa Gateway Config fetches configuration from LoRa Server and updates & restarts the packet-forwarder"
+DESCRIPTION="LoRa Channel Manager fetches channel configuration from LoRa Server and updates & restarts the packet-forwarder"
 DIST_FILE_PATH="../dist/tar/${NAME//-/_}_${VERSION}_linux_${GOARCH}.tar.gz"
 DEB_FILE_PATH="../dist/deb"
 

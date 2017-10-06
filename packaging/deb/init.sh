@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 ### BEGIN INIT INFO
-# Provides:          lora-gateway-config
+# Provides:          lora-channel-manager
 # Required-Start:    $all
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: LoRa Gateway Config fetches configuration from LoRa Server and updates & restarts the packet-forwarder
+# Short-Description: LoRa Channel Manager fetches configuration from LoRa Server and updates & restarts the packet-forwarder
 ### END INIT INFO
 
 # set variables for exporting (needed for DEFAULT_FILE)
 set -a
 
-NAME=lora-gateway-config
-DESC="LoRa Gateway Config"
+NAME=lora-channel-manager
+DESC="LoRa Channel Manager"
 DAEMON_USER=root
 DAEMON_GROUP=root
 DAEMON=/usr/bin/$NAME
@@ -35,63 +35,63 @@ fi
 . /lib/lsb/init-functions
 
 if [ -r /etc/default/rcS ]; then
-	. /etc/default/rcS
+    . /etc/default/rcS
 fi
 
 if [ -f "$DEFAULT_FILE" ]; then
-	. "$DEFAULT_FILE"
+    . "$DEFAULT_FILE"
 fi
 
 function do_start {
-	start-stop-daemon --start --background --chuid "$DAEMON_USER:$DAEMON_GROUP" --make-pidfile --pidfile "$PID_FILE" --startas /bin/bash -- -c "exec $DAEMON > /var/log/$NAME/$NAME.log 2>&1"
+    start-stop-daemon --start --background --chuid "$DAEMON_USER:$DAEMON_GROUP" --make-pidfile --pidfile "$PID_FILE" --startas /bin/bash -- -c "exec $DAEMON > /var/log/$NAME/$NAME.log 2>&1"
 }
 
 function do_stop {
-	start-stop-daemon --stop --retry=TERM/30/KILL/5 --pidfile "$PID_FILE" --name "$NAME"
-	retval="$?"
-	sleep 1
-	return "$retval"
+    start-stop-daemon --stop --retry=TERM/30/KILL/5 --pidfile "$PID_FILE" --name "$NAME"
+    retval="$?"
+    sleep 1
+    return "$retval"
 }
 
 case "$1" in
-	start)
-		log_daemon_msg "Starting $DESC"
-		do_start
-		case "$?" in
-			0|1) log_end_msg 0 ;;
-			2) log_end_msg 1 ;;
-		esac
-		;;
-	stop)
-		log_daemon_msg "Stopping $DESC"
-		do_stop
-		case "$?" in
-			0|1) log_end_msg 0 ;;
-			2) log_end_msg 1 ;;
-		esac
-		;;
-	restart)
-		log_daemon_msg "Restarting $DESC"
-		do_stop
-		case "$?" in
-			0|1)
-				do_start
-				case "$?" in
-					0) log_end_msg 0 ;;
-					1) log_end_msg 1 ;;
-					*) log_end_msg 1 ;;
-				esac
-				;;
-			*)
-				log_end_msg 1
-				;;
-		esac
-		;;
-	status)
-		status_of_proc -p "$PID_FILE" "$DAEMON" "$NAME" && exit 0 || exit $?
-		;;
-	*)
-		echo "Usage: $NAME {start|stop|restart|status}" >&2
-		exit 3
-		;;
+    start)
+        log_daemon_msg "Starting $DESC"
+        do_start
+        case "$?" in
+            0|1) log_end_msg 0 ;;
+            2) log_end_msg 1 ;;
+        esac
+        ;;
+    stop)
+        log_daemon_msg "Stopping $DESC"
+        do_stop
+        case "$?" in
+            0|1) log_end_msg 0 ;;
+            2) log_end_msg 1 ;;
+        esac
+        ;;
+    restart)
+        log_daemon_msg "Restarting $DESC"
+        do_stop
+        case "$?" in
+            0|1)
+                do_start
+                case "$?" in
+                    0) log_end_msg 0 ;;
+                    1) log_end_msg 1 ;;
+                    *) log_end_msg 1 ;;
+                esac
+                ;;
+            *)
+                log_end_msg 1
+                ;;
+        esac
+        ;;
+    status)
+        status_of_proc -p "$PID_FILE" "$DAEMON" "$NAME" && exit 0 || exit $?
+        ;;
+    *)
+        echo "Usage: $NAME {start|stop|restart|status}" >&2
+        exit 3
+        ;;
 esac

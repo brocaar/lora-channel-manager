@@ -1,5 +1,5 @@
 [Unit]
-Description=LoRa Gateway Config
+Description=LoRa Channel Manager
 Documentation=https://docs.loraserver.io
 Wants=network-online.target
 After=network-online.target
@@ -7,8 +7,8 @@ After=network-online.target
 [Service]
 User=root
 Group=root
-EnvironmentFile=/etc/default/lora-gateway-config
-ExecStart=/usr/bin/lora-gateway-config
+EnvironmentFile=/etc/default/lora-channel-manager
+ExecStart=/usr/bin/lora-channel-manager
 Restart=on-failure
 
 [Install]

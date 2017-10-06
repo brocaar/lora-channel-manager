@@ -1,14 +1,14 @@
 ---
-title: LoRa Gateway Config
+title: LoRa Channel Manager
 menu:
   main:
     parent: overview
     weight: 1
 ---
 
-## LoRa Gateway Config
+## LoRa Channel Manager
 
-LoRa Gateway Config periodically reads channel-configuration from [LoRa Server](/loraserver/),
+LoRa Channel Manager periodically reads channel-configuration from [LoRa Server](/loraserver/),
 updates the [packet-forwarder](https://github.com/lora-net/packet_forwarder)
 configuration in case of updates, and restarts the packet-forwarder process
 in case of any changes.

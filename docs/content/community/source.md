@@ -6,9 +6,9 @@ menu:
     weight: 3
 ---
 
-## LoRa Gateway Config source
+## LoRa Channel Manager source
 
-Source-code can be found at [https://github.com/brocaar/lora-gateway-config](https://github.com/brocaar/lora-gateway-config).
+Source-code can be found at [https://github.com/brocaar/lora-channel-manager](https://github.com/brocaar/lora-channel-manager).
 
 ### Building
 
@@ -20,12 +20,12 @@ shell within the docker-compose environment, execute the following command from
 the root of this project:
 
 ```bash
-docker-compose run --rm gwconfig bash
+docker-compose run --rm channelmanager bash
 ```
 
 #### Without Docker
 
-It is possible to build LoRa Gateway Config without Docker. However this requires
+It is possible to build LoRa Channel Manager without Docker. However this requires
 to install a couple of dependencies (depending your platform, there might be
 pre-compiled packages available):
 
@@ -33,7 +33,7 @@ pre-compiled packages available):
 
 Make sure you have [Go](https://golang.org/) installed (1.7+) and that the LoRa
 Gateway Config repository has been cloned to 
-`$GOPATH/src/github.com/brocaar/lora-gateway-config`.
+`$GOPATH/src/github.com/brocaar/lora-channel-manager`.
 
 ##### Development utilities
 

@@ -12,7 +12,7 @@ menu:
 
 Did you find a bug or want to request a new feature? Please first check if
 this issue has already been reported. If not, please create an issue:
-[https://github.com/brocaar/lora-gateway-config/issues](https://github.com/brocaar/lora-gateway-config/issues).
+[https://github.com/brocaar/lora-channel-manager/issues](https://github.com/brocaar/lora-channel-manager/issues).
 
 ### Questions
 

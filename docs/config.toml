@@ -1,6 +1,6 @@
-baseURL = "https://docs.loraserver.io/lora-gateway-config/"
+baseURL = "https://docs.loraserver.io/lora-channel-manager/"
 languageCode = "en-us"
-title = "LoRa Gateway Config documentation"
+title = "LoRa Channel Manager documentation"
 googleAnalytics = "UA-3512995-9"
 
 [[menu.main]]
@@ -25,4 +25,4 @@ googleAnalytics = "UA-3512995-9"
     weight = 3
 
 [params]
-    version = "0.1.0"
+    version = "0.1.1"

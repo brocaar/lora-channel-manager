@@ -42,7 +42,7 @@ deploy:
     file: "dist/tar/*.tar.gz"
     on:
       tags: true
-      repo: brocaar/lora-gateway-config
+      repo: brocaar/lora-channel-manager
 
   - provider: s3
     skip_cleanup: true
@@ -55,7 +55,7 @@ deploy:
     region: eu-west-1
     on:
       tags: true
-      repo: brocaar/lora-gateway-config
+      repo: brocaar/lora-channel-manager
 
   - provider: s3
     skip_cleanup: true
@@ -69,4 +69,4 @@ deploy:
     region: eu-west-1
     on:
       branch: master
-      repo: brocaar/lora-gateway-config
+      repo: brocaar/lora-channel-manager

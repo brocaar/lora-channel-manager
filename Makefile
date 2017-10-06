@@ -7,7 +7,7 @@ GOARCH ?= amd64
 build:
 	@echo "Compiling source for $(GOOS) $(GOARCH)"
 	@mkdir -p build
-	@GOOS=$(GOOS) GOARCH=$(GOARCH) go build -ldflags "-X main.version=$(VERSION)" -o build/lora-gateway-config$(BINEXT) cmd/lora-gateway-config/main.go
+	@GOOS=$(GOOS) GOARCH=$(GOARCH) go build -ldflags "-X main.version=$(VERSION)" -o build/lora-channel-manager$(BINEXT) cmd/lora-channel-manager/main.go
 
 clean:
 	@echo "Cleaning up workspace"
@@ -26,13 +26,13 @@ documentation:
 	@echo "Building documentation"
 	@mkdir -p dist/docs
 	@cd docs && hugo
-	@cd docs/public/ && tar -pczf ../../dist/docs/lora-gateway-config.tar.gz .
+	@cd docs/public/ && tar -pczf ../../dist/docs/lora-channel-manager.tar.gz .
 
 package: clean build
 	@echo "Creating package for $(GOOS) $(GOARCH)"
 	@mkdir -p dist/tar/$(VERSION)
 	@cp build/* dist/tar/$(VERSION)
-	@cd dist/tar/$(VERSION) && tar -pczf ../lora_gateway_config_$(VERSION)_$(GOOS)_$(GOARCH).tar.gz .
+	@cd dist/tar/$(VERSION) && tar -pczf ../lora_channel_manager_$(VERSION)_$(GOOS)_$(GOARCH).tar.gz .
 	@rm -rf dist/tar/$(VERSION)
 
 package-deb:

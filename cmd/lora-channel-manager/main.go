@@ -10,7 +10,7 @@ import (
 	"time"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/brocaar/lora-gateway-config/internal/config"
+	"github.com/brocaar/lora-channel-manager/internal/config"
 	"github.com/brocaar/loraserver/api/gw"
 	"github.com/urfave/cli"
 	"golang.org/x/net/context"
@@ -49,7 +49,7 @@ func run(c *cli.Context) error {
 		"docs":               "https://docs.loraserver.io/",
 		"base_config_file":   config.BaseConfigFile,
 		"output_config_file": config.OutputConfigFile,
-	}).Info("starting LoRa Gateway Config")
+	}).Info("starting LoRa Channel Manager")
 
 	// connect to gateway api server
 	log.WithFields(log.Fields{
@@ -121,10 +121,10 @@ func mustGetTransportCredentials(tlsCert, tlsKey, caCert string, verifyClientCer
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "lora-gateway-config"
-	app.Usage = "configuration daemon for LoRa gateways"
+	app.Name = "lora-channel-manager"
+	app.Usage = "channel-configuration daemon for LoRa gateways"
 	app.Version = version
-	app.Copyright = "see http://github.com/brocaar/lora-gateway-config for copyright information"
+	app.Copyright = "see http://github.com/brocaar/lora-channel-manager for copyright information"
 	app.Action = run
 	app.Flags = []cli.Flag{
 		cli.StringFlag{

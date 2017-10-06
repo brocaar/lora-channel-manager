@@ -8,7 +8,7 @@ menu:
 
 ## Configuration
 
-To list all configuration options, start `lora-gateway-config` with the
+To list all configuration options, start `lora-channel-manager` with the
 `--help` flag. This will display:
 
 ```text
@@ -41,7 +41,7 @@ exposed by the [LoRa Server](/loraserver/) service.
 
 ### Configuration files
 
-LoRa Gateway Config reads a base configuration file (`--base-config-file`),
+LoRa Channel Manager reads a base configuration file (`--base-config-file`),
 updates the `radio_`, `chan_` and `gateway_ID` keys and writes the end-result
 into `--output-config-file`. The base configuration file must already contain
 all other configuration values.
@@ -73,6 +73,6 @@ web-interface or through the [LoRa Server](/loraserver/) API.
 ### Packet-forwarder restart command
 
 This command configured by the `--pf-restart-command` will be executed by
-LoRa Gateway Config each time there is a configuration update. The command thati
+LoRa Channel Manager each time there is a configuration update. The command thati
 needs to be configured is gateway dependent. Please refer the manual of your
 gateway.

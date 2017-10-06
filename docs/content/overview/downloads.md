@@ -10,22 +10,22 @@ menu:
 
 ### Precompiled binaries
 
-| File name                                                                                                                                         | OS      | Arch  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----- |
-| [lora-gateway-config_{{< version >}}_darwin_amd64.tar.gz](https://dl.loraserver.io/tar/lora-gateway-config_{{< version >}}_darwin_amd64.tar.gz)   | OS X    | amd64 |
-| [lora-gateway-config_{{< version >}}_linux_386.tar.gz](https://dl.loraserver.io/tar/lora-gateway-config_{{< version >}}_linux_386.tar.gz)         | Linux   | 386   |
-| [lora-gateway-config_{{< version >}}_linux_amd64.tar.gz](https://dl.loraserver.io/tar/lora-gateway-config_{{< version >}}_linux_amd64.tar.gz)     | Linux   | amd64 |
-| [lora-gateway-config_{{< version >}}_linux_arm.tar.gz](https://dl.loraserver.io/tar/lora-gateway-config_{{< version >}}_linux_arm.tar.gz)         | Linux   | arm   |
-| [lora-gateway-config_{{< version >}}_windows_386.tar.gz](https://dl.loraserver.io/tar/lora-gateway-config_{{< version >}}_windows_386.tar.gz)     | Windows | 386   |
-| [lora-gateway-config_{{< version >}}_windows_amd64.tar.gz](https://dl.loraserver.io/tar/lora-gateway-config_{{< version >}}_windows_amd64.tar.gz) | Windows | amd64 |
+| File name                                                                                                                                           | OS      | Arch  |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----- |
+| [lora-channel-manager_{{< version >}}_darwin_amd64.tar.gz](https://dl.loraserver.io/tar/lora-channel-manager_{{< version >}}_darwin_amd64.tar.gz)   | OS X    | amd64 |
+| [lora-channel-manager_{{< version >}}_linux_386.tar.gz](https://dl.loraserver.io/tar/lora-channel-manager_{{< version >}}_linux_386.tar.gz)         | Linux   | 386   |
+| [lora-channel-manager_{{< version >}}_linux_amd64.tar.gz](https://dl.loraserver.io/tar/lora-channel-manager_{{< version >}}_linux_amd64.tar.gz)     | Linux   | amd64 |
+| [lora-channel-manager_{{< version >}}_linux_arm.tar.gz](https://dl.loraserver.io/tar/lora-channel-manager_{{< version >}}_linux_arm.tar.gz)         | Linux   | arm   |
+| [lora-channel-manager_{{< version >}}_windows_386.tar.gz](https://dl.loraserver.io/tar/lora-channel-manager_{{< version >}}_windows_386.tar.gz)     | Windows | 386   |
+| [lora-channel-manager_{{< version >}}_windows_amd64.tar.gz](https://dl.loraserver.io/tar/lora-channel-manager_{{< version >}}_windows_amd64.tar.gz) | Windows | amd64 |
 
 ### Debian / Ubuntu packages
 
-| File name                                                                                                                   | OS      | Arch  |
-| ----------------------------------------------------------------------------------------------------------------------------| ------- | ----- |
-| [lora-gateway-config_{{< version >}}_i386.deb](https://dl.loraserver.io/deb/lora-gateway-config_{{< version >}}_i386.deb)   | Linux   | 386   |
-| [lora-gateway-config_{{< version >}}_amd64.deb](https://dl.loraserver.io/deb/lora-gateway-config_{{< version >}}_amd64.deb) | Linux   | amd64 |
-| [lora-gateway-config_{{< version >}}_armhf.deb](https://dl.loraserver.io/deb/lora-gateway-config_{{< version >}}_armhf.deb) | Linux   | arm   |
+| File name                                                                                                                     | OS      | Arch  |
+| ------------------------------------------------------------------------------------------------------------------------------| ------- | ----- |
+| [lora-channel-manager_{{< version >}}_i386.deb](https://dl.loraserver.io/deb/lora-channel-manager_{{< version >}}_i386.deb)   | Linux   | 386   |
+| [lora-channel-manager_{{< version >}}_amd64.deb](https://dl.loraserver.io/deb/lora-channel-manager_{{< version >}}_amd64.deb) | Linux   | amd64 |
+| [lora-channel-manager_{{< version >}}_armhf.deb](https://dl.loraserver.io/deb/lora-channel-manager_{{< version >}}_armhf.deb) | Linux   | arm   |
 
 ### Debian Ubuntu repository
 

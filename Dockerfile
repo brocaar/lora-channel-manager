@@ -1,6 +1,6 @@
 FROM golang:1.8
 
-ENV PROJECT_PATH=/go/src/github.com/brocaar/lora-gateway-config
+ENV PROJECT_PATH=/go/src/github.com/brocaar/lora-channel-manager
 ENV PATH=$PATH:$PROJECT_PATH/build
 
 # install tools

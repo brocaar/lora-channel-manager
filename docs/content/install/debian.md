@@ -8,7 +8,7 @@ menu:
 
 ## Debian / Raspberry Pi
 
-These steps describe how to setup the LoRa Gateway Config utility on a
+These steps describe how to setup the LoRa Channel Manager utility on a
 Debian / Raspbian based gateway. This process has been tested using:
 
 * Debian / Raspbian Jessie
@@ -28,16 +28,16 @@ sudo echo "deb https://repos.loraserver.io/${DISTRIB_ID,,} ${DISTRIB_CODENAME} t
 sudo apt-get update
 ```
 
-### Install LoRa Gateway Config
+### Install LoRa Channel Manager
 
-In order to instal LoRa Gateway Config, execute the following command:
+In order to instal LoRa Channel Manager, execute the following command:
 
 ```bash
-sudo apt-get install lora-gateway-config
+sudo apt-get install lora-channel-manager
 ```
 
 After installation, modify the configuration file which is located at
-`/etc/default/lora-gateway-config`.
+`/etc/default/lora-channel-manager`.
 
 Settings you probably want to set / change:
 
@@ -50,28 +50,28 @@ Settings you probably want to set / change:
 Please refer to [configuration]({{< relref "config.md" >}}) for more information
 about these configuration variables.
 
-### Starting LoRa Gateway Config
+### Starting LoRa Channel Manager
 
-To (re)start LoRa Gateway Config, use the following commands:
+To (re)start LoRa Channel Manager, use the following commands:
 
 ```bash
-sudo systemctl [start|stop|restart|status] lora-gateway-config
+sudo systemctl [start|stop|restart|status] lora-channel-manager
 ```
 
-### LoRa Gateway Config log output
+### LoRa Channel Manager log output
 
-Now you've setup LoRa Gateway Config, it is a good time to verify that
-LoRa Gateway Config is actually up-and-running. This can be done by
-looking at the LoRa Gateway Config log output.
+Now you've setup LoRa Channel Manager, it is a good time to verify that
+LoRa Channel Manager is actually up-and-running. This can be done by
+looking at the LoRa Channel Manager log output.
 
 ```bash
-sudo journalctl -u lora-gateway-config -f -n 50
+sudo journalctl -u lora-channel-manager -f -n 50
 ```
 
 Example output:
 
 ```
-level=info msg="starting LoRa Gateway Config" base_config_file="/opt/semtech/packet_forwarder/lora_pkt_fwd/global_conf.json" docs="https://docs.loraserver.io/" output_config_file="/opt/semtech/packet_forwarder/lora_pkt_fwd/local_conf.json" version=0.1.0
+level=info msg="starting LoRa Channel Manager" base_config_file="/opt/semtech/packet_forwarder/lora_pkt_fwd/global_conf.json" docs="https://docs.loraserver.io/" output_config_file="/opt/semtech/packet_forwarder/lora_pkt_fwd/local_conf.json" version=0.1.1
 level=info msg="connecting to gateway-server" ca-cert= server="localhost:8002" tls-cert= tls-key=
 level=info msg="checking for updated configuration"
 level=info msg="configuration written to disk" path="/opt/semtech/packet_forwarder/lora_pkt_fwd/local_conf.json"

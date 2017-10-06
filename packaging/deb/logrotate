@@ -1,4 +1,4 @@
-/var/log/lora-gateway-config/lora-gateway-config.log {
+/var/log/lora-channel-manager/lora-channel-manager.log {
     daily
     rotate 7
     missingok

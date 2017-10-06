@@ -9,5 +9,5 @@ menu:
 ## Multitech gateways
 
 When you own a Multitech gateway, please contribute by creating a pull-request
-containing the steps needed to setup the LoRa Gateway Config utility
+containing the steps needed to setup the LoRa Channel Manager utility
 on the gateway.
