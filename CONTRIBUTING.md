@@ -4,7 +4,6 @@ There are a couple of ways to get involved:
 
 * Join the discussions:
 	* LoRa Server project forum [https://forum.loraserver.io/](https://forum.loraserver.io/)
-	* LoRa Channel Manager Gitter chat [https://gitter.im/loraserver/lora-gateway-config](https://gitter.im/loraserver/lora-gateway-config)
 * Report bugs or make feature-requests by opening an issue at [https://github.com/brocaar/lora-channel-manager/issues](https://github.com/brocaar/lora-channel-manager/issues)
 * Fix issues or improve documentation by creating pull-requests
 

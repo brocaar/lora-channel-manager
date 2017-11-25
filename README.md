@@ -1,7 +1,6 @@
 # LoRa Channel Manager
 
 [![Build Status](https://travis-ci.org/brocaar/lora-channel-manager.svg?branch=master)](https://travis-ci.org/brocaar/lora-channel-manager)
-[![Gitter chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/loraserver/lora-channel-manager)
 
 LoRa Channel Manager periodically reads channel-configuration from [LoRa Server](https://github.com/brocaar/loraserver/),
 updates the [packet-forwarder](https://github.com/lora-net/packet_forwarder)
@@ -59,7 +58,7 @@ repository to `$GOPATH/src/github.com/brocaar/lora-channel-manager`.
 
 There are a couple of ways to get involved:
 
-* Join the discussions and share your feedback at [https://gitter.io/loraserver/lora-channel-manager](https://gitter.io/loraserver/lora-channel-manager)
+* Join the discussions at [https://forum.loraserver.io](https://forum.loraserver.io/)
 * Report bugs or make feature-requests by opening an issue at [https://github.com/brocaar/lora-channel-manager/issues](https://github.com/brocaar/lora-channel-manager/issues)
 * Fix issues or improve documentation by creating pull-requests
 
