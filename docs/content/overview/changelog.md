@@ -6,12 +6,12 @@ menu:
     weight: 3
 ---
 
-## Changelog
+# Changelog
 
-### 0.1.1
+## 0.1.1
 
 * Rename LoRa Gateway Config to LoRa Channel Manager
 
-### 0.1.0
+## 0.1.0
 
 * Initial version.

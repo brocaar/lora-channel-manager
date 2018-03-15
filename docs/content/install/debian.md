@@ -6,14 +6,14 @@ menu:
     weight: 2
 ---
 
-## Debian / Raspberry Pi
+# Debian / Raspberry Pi
 
 These steps describe how to setup the LoRa Channel Manager utility on a
 Debian / Raspbian based gateway. This process has been tested using:
 
 * Debian / Raspbian Jessie
 
-### LoRa Server Debian repository
+## LoRa Server Debian repository
 
 The LoRa Server project provides pre-compiled binaries packaged as Debian (.deb)
 packages. In order to activate this repository, execute the following
@@ -28,7 +28,7 @@ sudo echo "deb https://repos.loraserver.io/${DISTRIB_ID,,} ${DISTRIB_CODENAME} t
 sudo apt-get update
 ```
 
-### Install LoRa Channel Manager
+## Install LoRa Channel Manager
 
 In order to instal LoRa Channel Manager, execute the following command:
 
@@ -50,7 +50,7 @@ Settings you probably want to set / change:
 Please refer to [configuration]({{< relref "config.md" >}}) for more information
 about these configuration variables.
 
-### Starting LoRa Channel Manager
+## Starting LoRa Channel Manager
 
 To (re)start LoRa Channel Manager, use the following commands:
 
@@ -58,7 +58,7 @@ To (re)start LoRa Channel Manager, use the following commands:
 sudo systemctl [start|stop|restart|status] lora-channel-manager
 ```
 
-### LoRa Channel Manager log output
+## LoRa Channel Manager log output
 
 Now you've setup LoRa Channel Manager, it is a good time to verify that
 LoRa Channel Manager is actually up-and-running. This can be done by

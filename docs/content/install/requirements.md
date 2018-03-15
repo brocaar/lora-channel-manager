@@ -6,9 +6,9 @@ menu:
     weight: 1
 ---
 
-## Requirements
+# Requirements
 
-### Packet-forwarder
+## Packet-forwarder
 
 LoRa Channel Manager is an addition to the [packet-forwarder](https://github.com/lora-net/packet_forwarder)
 process. Before installing the LoRa Channel Manager utility, make sure your

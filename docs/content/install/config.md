@@ -6,7 +6,7 @@ menu:
     weight: 5
 ---
 
-## Configuration
+# Configuration
 
 To list all configuration options, start `lora-channel-manager` with the
 `--help` flag. This will display:
@@ -30,16 +30,16 @@ GLOBAL OPTIONS:
 Both cli arguments and environment-variables can be used to pass configuration
 options.
 
-### Gateway MAC
+## Gateway MAC
 
 The gateway MAC address must be given in HEX format, e.g. `0102030405060708`.
 
-### Gateway API server
+## Gateway API server
 
 This is the `IP:PORT` pointing to the gateway API server. This API server is
 exposed by the [LoRa Server](/loraserver/) service.
 
-### Configuration files
+## Configuration files
 
 LoRa Channel Manager reads a base configuration file (`--base-config-file`),
 updates the `radio_`, `chan_` and `gateway_ID` keys and writes the end-result
@@ -48,14 +48,14 @@ all other configuration values.
 
 **Note:** the file to which `--output-config-file` point will be overwritten!
 
-#### Option one
+### Option one
 
 When your current setup uses a `global_conf.json` and `local_conf.json` file,
 combine these two files into a third file containing all configuration and use
 this file as your `--base-config-file`. The `--output-config-file` could then
 be the path to your `local_conf.json` file.
 
-#### Option two
+### Option two
 
 An alternative way is to set both `--base-config-file` and
 `--output-config-file` to the path of the `global_conf.json`. That way you are
@@ -64,13 +64,13 @@ that your original `global_conf.json` file will be overwritten, **make sure you
 keep a backup of the original `global_conf.json`!**.
 
 
-### JWT token
+## JWT token
 
 The JWT token (`--gw-client-jwt-token`) must be set to authenticate the gateway
 to the API. This token can be retrieved through the [LoRa App Server](/lora-app-server/)
 web-interface or through the [LoRa Server](/loraserver/) API.
 
-### Packet-forwarder restart command
+## Packet-forwarder restart command
 
 This command configured by the `--pf-restart-command` will be executed by
 LoRa Channel Manager each time there is a configuration update. The command thati

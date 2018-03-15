@@ -6,14 +6,14 @@ menu:
     weight: 1
 ---
 
-## LoRa Channel Manager
+# LoRa Channel Manager
 
 LoRa Channel Manager periodically reads channel-configuration from [LoRa Server](/loraserver/),
 updates the [packet-forwarder](https://github.com/lora-net/packet_forwarder)
 configuration in case of updates, and restarts the packet-forwarder process
 in case of any changes.
 
-### How it works
+## How it works
 
 At configured intervals it calls the [LoRa Server](/loraserver/) API
 to fetch the channel-configuration for a given gateway MAC. In case of an
