@@ -8,6 +8,9 @@ menu:
 
 # LoRa Channel Manager
 
+**This component has been deprecated and has been merged into the
+[LoRa Gateway Bridge](https://www.loraserver.io/lora-gateway-bridge/)!**
+
 LoRa Channel Manager periodically reads channel-configuration from [LoRa Server](/loraserver/),
 updates the [packet-forwarder](https://github.com/lora-net/packet_forwarder)
 configuration in case of updates, and restarts the packet-forwarder process
